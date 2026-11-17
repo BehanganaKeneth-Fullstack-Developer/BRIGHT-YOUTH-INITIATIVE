@@ -94,7 +94,20 @@ const contactForm = document.getElementById("contactForm");
 contactForm?.addEventListener("submit", (event) => {
   event.preventEventDefault?.();
   event.preventDefault();
+  const formData = new FormData(contactForm);
+  const interest = formData.get("interest");
   const status = contactForm.querySelector(".form-status");
+
+  if (interest === "Joining a programme") {
+    sessionStorage.setItem("bfyiJoinProgramme", "true");
+    status.textContent = "Thank you — opening the youth application form.";
+    contactForm.reset();
+    window.setTimeout(() => {
+      window.location.href = "register.html";
+    }, 350);
+    return;
+  }
+
   status.textContent = "Thank you — your message is ready to send.";
   contactForm.reset();
 });
