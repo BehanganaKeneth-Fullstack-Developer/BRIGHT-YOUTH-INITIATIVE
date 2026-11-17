@@ -131,6 +131,35 @@ button { cursor: pointer; }
 .director-details h3 { font-family: "Manrope"; font-size: 24px; margin: 0 0 12px; }
 .director-details p { color: var(--muted); line-height: 1.65; margin: 0; }
 
+.register-link { text-decoration: none; }
+.registration-hero { background: var(--cream); padding: 82px 0 90px; }
+.registration-grid { display: grid; grid-template-columns: 36% 64%; gap: 55px; align-items: start; }
+.registration-intro h1 { font-family: "Manrope"; font-size: 54px; line-height: 1; letter-spacing: -3px; margin: 20px 0 22px; }
+.registration-intro h1 em { color: var(--blue); font-style: normal; }
+.registration-intro > p:not(.eyebrow) { color: var(--muted); line-height: 1.7; max-width: 380px; }
+.location-card { display: flex; align-items: center; gap: 12px; margin-top: 32px; border: 1px solid var(--line); background: white; padding: 14px; border-radius: 5px; max-width: 360px; }
+.location-icon { width: 38px; height: 38px; display: grid; place-items: center; background: var(--yellow); border-radius: 50%; font-size: 18px; }
+.location-card div { display: flex; flex-direction: column; gap: 3px; }
+.location-card strong { font-size: 12px; }
+.location-card span { color: var(--muted); font-size: 12px; }
+.registration-form { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 30px; box-shadow: 0 18px 50px rgba(16,35,61,.08); }
+.form-heading { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 22px; }
+.form-heading span { font-family: "Manrope"; font-size: 18px; font-weight: 800; }
+.form-heading strong { color: var(--muted); font-size: 11px; letter-spacing: 1px; }
+.registration-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.registration-fields label { display: flex; flex-direction: column; gap: 7px; }
+.registration-fields label.full { grid-column: 1 / -1; }
+.registration-fields label > span { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .7px; }
+.registration-fields input, .registration-fields select, .registration-fields textarea { width: 100%; border: 1px solid var(--line); border-radius: 4px; background: white; color: var(--ink); outline: none; padding: 12px 13px; }
+.registration-fields input, .registration-fields select { height: 48px; }
+.registration-fields textarea { resize: vertical; }
+.registration-fields input:focus, .registration-fields select:focus, .registration-fields textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(23,104,229,.08); }
+.consent { display: flex; align-items: flex-start; gap: 9px; margin: 18px 0; font-size: 12px; color: var(--muted); }
+.consent input { margin-top: 2px; accent-color: var(--blue); }
+.registration-submit { width: 100%; }
+.registration-status { min-height: 20px; margin: 12px 0 0; color: var(--blue); font-size: 13px; font-weight: 700; }
+.registration-status a { text-decoration: underline; }
+
 .page-hero { background: var(--cream); padding: 78px 0 70px; border-bottom: 1px solid var(--line); }
 .page-hero-inner h1 { font-family: "Manrope"; font-size: 58px; letter-spacing: -3px; margin: 16px 0 12px; }
 .page-hero-inner > p:last-child { color: var(--muted); font-size: 17px; margin: 0; }
@@ -354,6 +383,9 @@ footer { background: #091729; color: white; }
   .director-card { grid-template-columns: 160px 1fr; }
   .director-photo { height: 220px; }
   .director-details { padding: 22px; }
+  .registration-hero { padding: 58px 0 70px; }
+  .registration-grid { grid-template-columns: 1fr; gap: 38px; }
+  .registration-intro h1 { font-size: 46px; }
 
   .programmes { padding: 78px 0 90px; }
   .section-heading { display: block; }
@@ -398,6 +430,10 @@ footer { background: #091729; color: white; }
 
 @media (max-width: 480px) {
   .container { width: calc(100% - 32px); }
+  .registration-form { padding: 20px 16px; }
+  .registration-fields { grid-template-columns: 1fr; }
+  .registration-fields label.full { grid-column: 1; }
+  .registration-intro h1 { font-size: 40px; }
   .director-card { grid-template-columns: 1fr; }
   .director-photo { height: 300px; }
   .director-card-page { grid-template-columns: 1fr; }

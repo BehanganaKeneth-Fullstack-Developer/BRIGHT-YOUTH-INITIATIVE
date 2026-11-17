@@ -99,4 +99,19 @@ contactForm?.addEventListener("submit", (event) => {
   contactForm.reset();
 });
 
+const youthRegistrationForm = document.getElementById("youthRegistrationForm");
+youthRegistrationForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(youthRegistrationForm);
+  const registration = Object.fromEntries(formData.entries());
+  const registrations = JSON.parse(localStorage.getItem("bfyiRegistrations") || "[]");
+  registrations.push({ ...registration, submittedAt: new Date().toISOString() });
+  localStorage.setItem("bfyiRegistrations", JSON.stringify(registrations));
+
+  const status = youthRegistrationForm.querySelector(".registration-status");
+  const message = `Hello BFYI, I have submitted a youth registration application.%0AName: ${encodeURIComponent(registration.fullName)}%0AAge: ${encodeURIComponent(registration.age)}%0AProgramme: ${encodeURIComponent(registration.programme)}%0APhone: ${encodeURIComponent(registration.phone)}`;
+  status.innerHTML = `Registration saved successfully. <a href="https://wa.me/256781576733?text=${message}" target="_blank" rel="noopener noreferrer">Send details on WhatsApp →</a>`;
+  youthRegistrationForm.reset();
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();
