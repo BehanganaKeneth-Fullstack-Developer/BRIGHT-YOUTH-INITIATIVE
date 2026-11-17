@@ -44,8 +44,9 @@ button { cursor: pointer; }
 .nav-links a { font-size: 14px; font-weight: 700; position: relative; }
 .nav-dropdown { position: relative; }
 .dropdown-toggle { border: 0; background: none; color: var(--ink); font-size: 14px; font-weight: 700; padding: 0; }
-.dropdown-toggle span { display: inline-block; margin-left: 4px; transition: transform .2s; }
-.nav-dropdown.open .dropdown-toggle span { transform: rotate(180deg); }
+.dropdown-toggle { display: inline-flex; align-items: center; gap: 8px; }
+.dropdown-arrow { width: 7px; height: 7px; display: inline-block; margin: -3px 0 0; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .22s ease, margin .22s ease; }
+.nav-dropdown.open .dropdown-arrow { margin-top: 3px; transform: rotate(225deg); }
 .dropdown-menu { position: absolute; left: -24px; top: 38px; width: 270px; background: white; border: 1px solid rgba(16,35,61,.08); border-radius: 8px; box-shadow: 0 18px 45px rgba(16,35,61,.16); padding: 8px; opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .22s, transform .22s; }
 .dropdown-menu::before { content: ""; position: absolute; top: -6px; left: 38px; width: 12px; height: 12px; background: white; border-left: 1px solid rgba(16,35,61,.08); border-top: 1px solid rgba(16,35,61,.08); transform: rotate(45deg); }
 .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
@@ -57,7 +58,7 @@ button { cursor: pointer; }
 .dropdown-menu a:hover { background: #f5f8fd; color: var(--blue); }
 @media (min-width: 761px) {
   .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
-  .nav-dropdown:hover .dropdown-toggle span { transform: rotate(180deg); }
+  .nav-dropdown:hover .dropdown-arrow { margin-top: 3px; transform: rotate(225deg); }
 }
 .nav-links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--blue); transition: right .25s; }
 .nav-links a:hover::after { right: 0; }
